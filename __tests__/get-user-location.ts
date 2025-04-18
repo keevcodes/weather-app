@@ -1,5 +1,4 @@
 import { getUserLocationCoordinates } from "@/lib/get-user-location";
-import { WebServiceClient } from "@maxmind/geoip2-node";
 
 describe("getUserLocationCoordinates", () => {
   const mockIp = "192.168.1.1";
