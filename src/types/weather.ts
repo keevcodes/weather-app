@@ -1,6 +1,4 @@
-export interface DayDetails {
-  feelslike_c: number;
-  feelslike_f: number;
+export type DayDetails = {
   temp_c: number;
   humidity: number;
   condition: { text: string; icon: string };
@@ -15,11 +13,13 @@ export interface DayDetails {
   mintemp_f: number;
   avghumidity?: number;
   daily_chance_of_rain?: number;
-}
+  feelslike_c?: number;
+  feelslike_f?: number;
+};
 
-export interface Current extends DayDetails {
+export type SelectedDay = DayDetails & {
   date: string;
-}
+};
 
 export type Location = {
   name: string;
@@ -37,11 +37,11 @@ export type Forecast = {
   };
 };
 
-export interface WeatherData {
+export type WeatherData = {
   forecast: { forecastday: Forecast[] };
   location: Location;
-}
+};
 
-export interface ForecastData extends WeatherData {
+export type ForecastData = WeatherData & {
   current: DayDetails;
-}
+};
