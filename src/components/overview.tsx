@@ -18,6 +18,9 @@ export const Overview = (props: Props) => {
 
   const setForecast = useWeatherStore((state) => state.setForecast);
   const setCurrent = useWeatherStore((state) => state.setCurrent);
+  const setSelectedDayForOverview = useWeatherStore(
+    (state) => state.setSelectedDayForOverview
+  );
 
   setForecast(
     forecastData.forecast.forecastday
@@ -25,7 +28,9 @@ export const Overview = (props: Props) => {
       .sort((a, b) => (a.date > b.date ? 1 : -1))
   );
 
-  setCurrent({
+  setCurrent(forecastData.current);
+
+  setSelectedDayForOverview({
     ...forecastData.current,
     maxtemp_c:
       forecastData.forecast.forecastday.find(

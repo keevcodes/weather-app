@@ -7,7 +7,7 @@ type Props = {
 export const WeatherHighlight = (props: Props) => (
   <>
     {props.icon}
-    <span className="text-sm text-white text-muted-foreground font-inter font-bold">
+    <span className="text-sm text-center text-white text-muted-foreground font-inter font-bold">
       {props.hightlightText}
     </span>
     <span className="text-xs text-white font-inter">
