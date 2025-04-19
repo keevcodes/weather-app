@@ -19,7 +19,6 @@ type WeatherCardProps = {
 
 export const WeatherCard = (props: WeatherCardProps) => {
   const { location } = props;
-  const current = useWeatherStore((state) => state.current);
   const selectedDayForOverview = useWeatherStore(
     (state) => state.selectedDayForOverview
   );
