@@ -4,16 +4,14 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
+import { useWeatherStore } from "@/stores/weather-store";
 import dayjs from "dayjs";
 import { CloudRain, Droplets, Thermometer, Wind } from "lucide-react";
-import { Forecast, Location } from "../types/weather";
+import { Location } from "../types/weather";
 import { WeatherHighlight } from "./weather-hightlight";
-import { useWeatherStore } from "@/stores/weather-store";
-import Image from "next/image";
 
 type WeatherCardProps = {
   location: Location;

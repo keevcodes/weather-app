@@ -1,4 +1,4 @@
-import { Current, DayDetails, Forecast } from "@/types/weather";
+import { Current, Forecast } from "@/types/weather";
 import { create } from "zustand";
 
 interface WeatherStore {

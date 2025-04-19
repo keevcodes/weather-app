@@ -1,5 +1,3 @@
-import { extend } from "dayjs";
-
 export interface DayDetails {
   feelslike_c: number;
   feelslike_f: number;

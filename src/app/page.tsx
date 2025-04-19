@@ -8,7 +8,7 @@ async function getUserIpAddressFromHeaders(): Promise<{
   ipAddress: string;
   error: boolean;
 }> {
-  let ipAddress = await (await headers()).get("x-forwarded-for");
+  const ipAddress = await (await headers()).get("x-forwarded-for");
 
   if (!ipAddress || ipAddress === "::1") {
     console.error("either no ip address found or localhost", ipAddress);
