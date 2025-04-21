@@ -66,10 +66,10 @@ export const ForecastList = () => {
                 />
                 <div className="flex flex-col sm:gap-1 lg:gap-2 lg:flex-row">
                   <span className="font-medium text-sm text-white/80">
-                    L: {day.mintemp_c}°
+                    H: {day.maxtemp_c}°
                   </span>
                   <span className="font-medium text-sm text-white/80">
-                    H: {day.maxtemp_c}°
+                    L: {day.mintemp_c}°
                   </span>
                 </div>
               </div>
