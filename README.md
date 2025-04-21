@@ -10,6 +10,8 @@ After cloning the repo, install the dependencies
 npm install
 ```
 
+You will need credentials for [weatherapi](https://www.weatherapi.com/) and for [maxmind](https://www.maxmind.com/en/home). Please see the example.env file
+
 First, run the development server:
 
 ```bash
