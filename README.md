@@ -1,8 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Prod url
+
+https://weather-app-ce2y.vercel.app/
 
 ## Getting Started
 
-first install the dependencies
+After cloning the repo, install the dependencies
 
 ```bash
 npm install
@@ -22,17 +24,25 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-To run tests
+To run unit tests
 
 ```bash
 npm run test
+```
+
+To run e2e tests
+
+```bash
+npm run test:e2e
 ```
 
 ## Decisions
 
 ### Testing
 
-Jest is used for unit testing the core functionality of fetching the data and error handling. All tests are run before commits with husky. I don't usually shoot for 100% code coverage because this can be quite the undertaking in larger code bases and can slow the team down, usually making sure you cover the really important business logic is enough to give confidence.
+Jest is used for unit testing the core functionality of fetching the data and error handling. I don't usually shoot for 100% code coverage because this can be quite the undertaking in larger code bases and can slow the team down, usually making sure you cover the really important business logic is enough to give confidence.
+
+I used playwright to setup an e2e test to give confidence that core elements of the application are rendered given the Grahamstown, South Africa location fallback on local host. These tests make sure that the location is displayed, along with the weather hightlight elements and that the forecast section renders 7 items. This also given enough confidence that the application is still displaying the necessary elements to the user.
 
 ### API
 
@@ -41,7 +51,7 @@ This api offers the neccessary histroical and future forecast for the project re
 
 ### Maxmind
 
-Instead of having the requirement of the user to opt-into using geolocation on the client with the gelocation api, I opted into using geolite from maxmind to get the user's location information from their ipaddress, which can then be used with the weather api. This gives the user a nice experience in that the weather app just works for their location, but comes with the trade off that we need a third party tool and an account with Maxmind. For hobby projects this is free, but if this were to be used commerically the liscense fees would obviously need to be considered.
+Instead of having the requirement of the user to opt-into using geolocation on the client with the gelocation api, I opted into using geolite from maxmind to get the user's location information from their ipaddress, which can then be used with the weather api. This gives the user a nice experience in that the weather app just works for their location, but comes with the trade off that we need a third party tool and an account with Maxmind. For hobby projects this is free, but if this were to be used commerically the liscense fees would obviously need to be considered. I've also noticed that the location accuracy can be off by quite a large degree, which I beleive is also coming from the free version of maxmind here.
 
 ### Nextjs
 
