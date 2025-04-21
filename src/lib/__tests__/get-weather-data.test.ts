@@ -7,7 +7,7 @@ describe("getWeatherData methods", () => {
     expect(Array.isArray(result.forecast.forecastday)).toBe(true);
     expect(result.forecast.forecastday.length).toBe(4);
 
-    result.forecast.forecastday.forEach((day: any) => {
+    result.forecast.forecastday.forEach(() => {
       expect.objectContaining({
         date: expect.any(String),
         day: expect.objectContaining({
@@ -34,7 +34,7 @@ describe("getWeatherData methods", () => {
     expect(Array.isArray(result.forecast.forecastday)).toBe(true);
     expect(result.forecast.forecastday.length).toBe(3);
 
-    result.forecast.forecastday.forEach((day: any) => {
+    result.forecast.forecastday.forEach(() => {
       expect.objectContaining({
         date: expect.any(String),
         day: expect.objectContaining({
